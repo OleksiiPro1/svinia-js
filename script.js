@@ -8,11 +8,15 @@ const diceElement = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const player0Element = document.querySelector('.player--0');
+const player1Element = document.querySelector('.player--1');
 
 score0Element.textContent = 0;
 score1Element.textContent = 0;
 
+const totalScores = [0, 0];
 let currentScore = 0;
+let actyvePlayer = 0;
 
 diceElement.classList.add('hidden');
 
@@ -25,10 +29,20 @@ btnRoll.addEventListener('click', function() {
 
     if (diceNumber !== 1) {
         currentScore += diceNumber;
-        current0Element.textContent = currentScore;
+        document.getElementById(`current--${actyvePlayer}`).textContent = currentScore;        
+    } else{
+        currentScore = 0;
+        document.getElementById(`current--${actyvePlayer}`).textContent = currentScore;
+        actyvePlayer = actyvePlayer === 0 ? 1 : 0;
+        player0Element.classList.toggle('player--active');
+        player1Element.classList.toggle('player--active');        
     }
 
-})
+});
+
+btnHold.addEventListener('click', function() {
+
+});
 
 
 
