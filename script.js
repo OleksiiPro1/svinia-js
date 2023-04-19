@@ -69,7 +69,7 @@ if(isPlaying){
     totalScores[actyvePlayer] += currentScore;
     document.getElementById(`score--${actyvePlayer}`).textContent = totalScores[actyvePlayer];
 
-    if(totalScores[actyvePlayer] >= 20) {
+    if(totalScores[actyvePlayer] >= 100) {
         isPlaying = false;
         document.querySelector(`.player--${actyvePlayer}`).classList.add('player--winner');
         document.querySelector(`.player--${actyvePlayer}`).classList.remove('player--active');
