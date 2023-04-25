@@ -82,12 +82,3 @@ if(isPlaying){
 btnNew.addEventListener('click', initGame);
 
 
-
-
-
-
-
-
-
-
-
